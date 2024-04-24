@@ -10,6 +10,8 @@ echo "mysql password is: $mysql_secure_password"
 echo -e "$B Script Start time: $TIMESTAMP $N"
 
 ###############################
+dnf remove mysql-server -y &>>$LOGFILE
+
 dnf list installed mysql-server &>>$LOGFILE
 if [ $? -eq 0 ]
 then
