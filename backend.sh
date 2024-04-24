@@ -13,13 +13,13 @@ dnf module disable nodejs -y &>>$LOGFILE
 dnf module enable nodejs:20 -y &>>$LOGFILE
 dnf remove nodejs -y &>>$LOGFILE
 
-dnf list installed nodejs &>>$LOGFILE # why is set e/trap throwing error here?
-if [ $? -eq 0 ]
-then
-    echo -e "nodejs is already installed.... $Y SKIPPING $N"
-else 
+#dnf list installed nodejs &>>$LOGFILE # why is set e/trap throwing error here?
+#if [ $? -eq 0 ]
+#then
+#    echo -e "nodejs is already installed.... $Y SKIPPING $N"
+#else 
     dnf install nodejs -y &>>$LOGFILE
-fi
+#fi
 
 #Need to handle idempotent nature
 id expense &>>$LOGFILE
