@@ -10,9 +10,9 @@ echo "mysql password is: $mysql_secure_password"
 echo -e "$B Script Start time: $TIMESTAMP $N"
 
 ###############################
-dnf remove mysql-server -y &>>$LOGFILE
+#dnf remove mysql-server -y &>>$LOGFILE
 
-dnf list installed mysql-server &>>$LOGFILE
+dnf list installed mysql-server &>>$LOGFILE #Here it throws error when package is not listed...
 if [ $? -eq 0 ]
 then
     echo -e "MYSQL is already installed.... $Y SKIPPING $N"
