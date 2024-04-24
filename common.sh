@@ -1,5 +1,10 @@
 #!/bin/bash
 
+trap 'handleError $LINENO "$BASH_COMMAND"' ERR
+handleError(){
+    echo -e "Error occurred at LineNo: $1 and\nCommand error occurred is: $2"
+}
+
 USERID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)

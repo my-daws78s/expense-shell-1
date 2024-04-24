@@ -15,14 +15,14 @@ then
     echo -e "MYSQL is already installed.... $Y SKIPPING $N"
 else 
     dnf install mysql-server -y &>>$LOGFILE
-    VALIDATE $? "Installation of mysql"
+    #VALIDATE $? "Installation of mysql"
 fi
 
 systemctl enable mysqld &>>$LOGFILE
-VALIDATE $? "Enabling mysqld"
+#VALIDATE $? "Enabling mysqld"
 
 systemctl start mysqld &>>$LOGFILE
-VALIDATE $? "Starting of mysql"
+#VALIDATE $? "Starting of mysql"
 
 #Linux scripting is not idempotent by nature, user needs to take care:
 #Nature of program irrespective of how many times u run, it shud not change result.
@@ -34,7 +34,7 @@ mysql -h db.mydevops-learning.cloud -uroot -p${mysql_secure_password} -e 'show d
 if [ $? -ne 0 ]
 then
     mysql_secure_installation --set-root-pass ${mysql_secure_password} &>>$LOGFILE
-    VALIDATE $? "Setting up DB password: "
+    #VALIDATE $? "Setting up DB password: "
 else 
     echo -e "mysql password is already setup. $Y SKIPPING $N"
 fi
