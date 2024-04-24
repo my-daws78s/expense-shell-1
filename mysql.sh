@@ -10,7 +10,7 @@ echo "mysql password is: $mysql_secure_password"
 echo -e "$B Script Start time: $TIMESTAMP $N"
 
 ###############################
-dnf list installed mysql-servers &>>$LOGFILE
+dnf list installed mysql-server &>>$LOGFILE
 if [ $? -eq 0 ]
 then
     echo -e "MYSQL is already installed.... $Y SKIPPING $N"
