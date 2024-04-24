@@ -37,8 +37,11 @@ then
     mysql_secure_installation --set-root-pass ${mysql_secure_password} &>>$LOGFILE
     #VALIDATE $? "Setting up DB password: "
 else 
-    echoo -e "mysql password is already setup. $Y SKIPPING $N"
+    echo -e "mysql password is already setup. $Y SKIPPING $N"
 fi
 ###############################
 
 echo -e "$B Script End time:   $TIMESTAMP $N"
+
+#Output: The command without set -e and having trap will print all error messages at every line of failure,
+# but when set -e is given it quits after the first error in the script.
