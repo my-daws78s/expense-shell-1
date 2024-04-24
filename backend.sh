@@ -11,6 +11,7 @@ echo -e "Starting Script at:: $B $TIMESTAMP $N"
 
 dnf module disable nodejs -y &>>$LOGFILE
 dnf module enable nodejs:20 -y &>>$LOGFILE
+dnf install nodejs -y &>>$LOGFILE
 dnf list installed nodejs &>>$LOGFILE
 if [ $? -eq 0 ]
 then
