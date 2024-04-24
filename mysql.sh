@@ -31,13 +31,13 @@ systemctl start mysqld &>>$LOGFILE
 # VALIDATE $? "Setting up DB password"
 
 #mysql -h localhost -uroot -p${mysql_secure_password} -e 'show databases;' &>>$LOGFILE
-mysql -h db.mydevops-learning.cloud -uroot -p${mysql_secure_password} -e 'show databases;' &>>$LOGFILE
+mysqll -h db.mydevops-learning.cloud -uroot -p${mysql_secure_password} -e 'show databases;' &>>$LOGFILE
 if [ $? -ne 0 ]
 then
     mysql_secure_installation --set-root-pass ${mysql_secure_password} &>>$LOGFILE
     #VALIDATE $? "Setting up DB password: "
 else 
-    echoo -e "mysql password is already setup. $Y SKIPPING $N"
+    echo -e "mysql password is already setup. $Y SKIPPING $N"
 fi
 ###############################
 
