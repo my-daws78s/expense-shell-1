@@ -5,6 +5,7 @@ check_root
 
 echo "Enter the mysql password:"
 read -s mysql_secure_password
+echo "mysql password is: $mysql_secure_password"
 
 echo -e "$B Script Start time: $TIMESTAMP $N"
 
