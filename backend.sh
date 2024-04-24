@@ -25,7 +25,7 @@ dnf remove nodejs -y &>>$LOGFILE
 id expense &>>$LOGFILE
 if [ $? -eq 0 ]
 then
-    echo -e "User expense is alreay created..... $Y SKIPPING $N"
+    echo -e "User expense is already created..... $Y SKIPPING $N"
 else 
     useradd expense &>>$LOGFILE
 fi
