@@ -19,7 +19,7 @@ else
     #VALIDATE $? "Installation of mysql"
 fi
 
-systemctl enable mysqlds &>>$LOGFILE
+systemctl enable mysqld &>>$LOGFILE
 #VALIDATE $? "Enabling mysqld"
 
 systemctl start mysqld &>>$LOGFILE
