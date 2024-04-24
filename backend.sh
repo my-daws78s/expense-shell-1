@@ -3,6 +3,10 @@
 source ./common.sh
 check_root
 
+echo "Enter the mysql password:"
+read -s mysql_secure_password
+echo "mysql password is: $mysql_secure_password"
+
 echo -e "Starting Script at:: $B $TIMESTAMP $N"
 
 dnf module disable nodejs -y &>>$LOGFILE
