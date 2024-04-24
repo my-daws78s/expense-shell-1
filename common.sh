@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 trap 'handleError $LINENO "$BASH_COMMAND"' ERR
 handleError(){
     echo -e "Error occurred at LineNo: $1 and\nCommand error occurred is: $2"
